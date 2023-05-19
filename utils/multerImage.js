@@ -2,7 +2,7 @@ const multer = require("multer");
 // const handler = require("./handler");
 
 const supportType = ["image/jpeg", "image/png","image/jpg"];
-const storage = multer.diskStorage({
+const storage = multer.memoryStorage({
   destination: function (req, file, cb) {
     cb(null, "public/images");
   },
