@@ -6,7 +6,7 @@ const storage = new Storage({
 const bucket = storage.bucket("tukang-storage");
 
 async function uploadToStorage(req, res, next) {
-  if (!req.file) next();
+  if (req.file) next();
 
   const image = req.file;
   // const { originalname, buffer } = req.file;

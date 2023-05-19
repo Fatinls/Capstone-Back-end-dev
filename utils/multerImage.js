@@ -3,9 +3,6 @@ const multer = require("multer");
 
 const supportType = ["image/jpeg", "image/png","image/jpg"];
 const storage = multer.memoryStorage({
-  destination: function (req, file, cb) {
-    cb(null, null);
-  },
   filename: function (req, file, cb) {
     if (!supportType.includes(file.mimetype)) {
       cb(new Error("File type not supported"), null);
