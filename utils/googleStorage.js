@@ -1,7 +1,7 @@
 const { Storage } = require("@google-cloud/storage");
 const storage = new Storage({
   projectId: "analog-pilot-381004",
-  keyFilename: "./credentials.json",
+  keyFilename: "../credentials.json",
 });
 const bucket = storage.bucket("tukang-storage");
 
