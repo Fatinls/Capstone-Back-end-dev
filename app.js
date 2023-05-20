@@ -1,6 +1,5 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
@@ -11,7 +10,7 @@ const penyewaRouter = require('./app/penyewa/route');
 const customErrorHandler = require('./middleware/customErrorHandler');
 const page404NotFound = require('./middleware/handler404NotFound');
 var app = express();
-require('dotenv').config();
+
 // view engine setup
 
 app.use(logger('dev'));
