@@ -18,6 +18,9 @@ async function uploadToStorage(req, res, next) {
   const blob = bucket.file("image-"+  Date.now() + "-" + image.originalname);
   const blobStream = blob.createWriteStream({
     resumable: false,
+    metadata: {
+      contentType: req.file.mimetype,
+    },
   });
 
   blobStream.on("error", (err) => {
