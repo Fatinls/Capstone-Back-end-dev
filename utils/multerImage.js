@@ -8,10 +8,6 @@ const storage = multer.memoryStorage({
       cb(new Error("File type not supported"), null);
       return;
     }
-    cb(
-      null,
-       "image-"+  Date.now() + "-" + file.originalname
-    );
   },
 });
 const uploadImage = multer({
