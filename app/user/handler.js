@@ -130,10 +130,11 @@ module.exports = {
   handlerChangeImageUser: async (req, res, next) => {
     try {
       const id = req.user.id;
-      if (!req.file) {
+      if (!req.publicUrl) {
         throw new Error("Image is required");
       }
-      const publicUrl = req.file.publicUrl
+      console.log("result publicUrl:" + req.publicUrl);
+      const publicUrl = req.publicUrl;
       const getUser = await User.findByPk(id);
 
       console.log(publicUrl);
