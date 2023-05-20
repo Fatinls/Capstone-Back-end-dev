@@ -12,9 +12,6 @@ const storage = multer.memoryStorage({
 });
 const uploadImage = multer({
   storage: multer.memoryStorage(),
-  limits: {
-    fileSize: 500 * 1024,
-  },
 });
 
 module.exports = uploadImage;
